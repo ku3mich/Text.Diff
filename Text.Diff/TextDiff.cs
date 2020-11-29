@@ -60,7 +60,7 @@ namespace Text.Diff
 
                         foreach (var l in lineDiffs)
                         {
-                            var c = new String(EditSymbols[l.EditType], l.Length);
+                            var c = new string(EditSymbols[l.EditType], l.Length);
                             switch (l.EditType){
                                 case EditType.Change:
                                     dA.Append(c.PadLeft(l.StartA -dA.Length + l.Length));

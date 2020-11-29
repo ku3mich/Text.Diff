@@ -16,6 +16,12 @@ jobs:
         NUGET_FEED: https://api.nuget.org/v3/index.json
         NUGET_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
     steps:
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.4.3
+      with:
+        java-version: '11.0.4' # The JDK version to make available on the path.
+        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+        architecture: x64 # (x64 or x86) - defaults to x64
     - uses: actions/checkout@v2
       with: 
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
