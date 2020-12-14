@@ -2,13 +2,10 @@
 	<Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
 	<PropertyGroup>
 		<ProjectGuid>9715E745-F377-4FED-B85A-3071A0D7EB7C</ProjectGuid>
-		<Version>0.1</Version>
+		<Version>0.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Menees.Diffs" Version="4.9.10" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
 	</ItemGroup>
 </Project>
