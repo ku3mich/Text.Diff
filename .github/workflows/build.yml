@@ -39,13 +39,14 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: pwsh
         run: |
+          Get-Location
+    
           dotnet-sonarscanner begin `
             /k:"ku3mich_Text.Diff" `
             /o:"ku3mich" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
-          Get-Location
           dotnet build --configuration Release
           ./run-test.ps1
           dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
