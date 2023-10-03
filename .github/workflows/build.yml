@@ -16,7 +16,6 @@ jobs:
     steps:
       - name: Powershell versions
         run: |
-          powershell '$PSVersionTable'
           pwsh -Command '$PSVersionTable'
       - name: Set up JDK 17
         uses: actions/setup-java@v3
