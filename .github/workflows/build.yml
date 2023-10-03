@@ -20,32 +20,15 @@ jobs:
           pwsh -Command '$PSVersionTable'
           dotnet --version
           dotnet --list-sdks
-
+      - name: Setting up dotnet 6 as default SDK
+        run: |
+          dotnet new globaljson --sdk-version 6.0.0 --roll-forward minor
+          dotnet --version
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: 'zulu' 
-      - name: Cache dotnet
-        id: cache-dotnet
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.DOTNET_INSTALL_DIR }}
-          key: ${{ runner.os }}-dotnet-6
-          restore-keys: ${{ runner.os }}-dotnet-6
-      - name: Install dotnet 6
-        if: ${{ steps.cache-dotnet.outputs.cache-hit != 'true' }}
-        uses: actions/setup-dotnet@v3
-        with:
-            dotnet-version: 6.x.x
-      - name: Set installed/cached dotnet path [${{ env.DOTNET_INSTALL_DIR }}]
-        shell: pwsh
-        run: echo "${{ env.DOTNET_INSTALL_DIR }}" | Out-File -FilePath $ENV:GITHUB_PATH -Encoding utf8 -Append
-      - name: Check installed/cached dotnet version
-        run: dotnet --version
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
