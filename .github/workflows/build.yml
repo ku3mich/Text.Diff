@@ -15,6 +15,12 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_INSTALL_DIR: '.\.dotnet'
     steps:
+      - name: Check versions
+        run: |
+          pwsh -Command '$PSVersionTable'
+          dotnet --version
+          dotnet --list-sdks
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
