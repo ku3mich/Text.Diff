@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 Get-ChildItem -Recurse -Directory -Filter "*.Tests" |`
 	% { dotnet test `
 		--configuration Release `

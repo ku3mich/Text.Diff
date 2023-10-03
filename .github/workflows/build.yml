@@ -23,6 +23,9 @@ jobs:
           pwsh -Command '$PSVersionTable'
           dotnet --version
           dotnet --list-sdks
+      - name: Check versions
+        shell: bash
+        run: chmod +x *.ps1
       - name: pwd
         shell: pwsh
         run: Get-Location
