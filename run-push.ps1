@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 function Push-Package {
   param($pkg)
 	nuget push `

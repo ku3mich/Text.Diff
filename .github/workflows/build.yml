@@ -23,7 +23,7 @@ jobs:
           pwsh -Command '$PSVersionTable'
           dotnet --version
           dotnet --list-sdks
-      - name: Check versions
+      - name: Set +x for *.ps1
         shell: bash
         run: chmod +x *.ps1
       - name: pwd
