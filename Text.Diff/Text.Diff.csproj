@@ -2,7 +2,7 @@
 	<Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
 	<PropertyGroup>
 		<ProjectGuid>9715E745-F377-4FED-B85A-3071A0D7EB7C</ProjectGuid>
-		<Version>0.3</Version>
+		<Version>0.4</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

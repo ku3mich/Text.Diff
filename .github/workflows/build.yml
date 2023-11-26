@@ -29,9 +29,9 @@ jobs:
       - name: pwd
         shell: pwsh
         run: Get-Location
-      - name: Setting up dotnet 6 as default SDK
+      - name: Setting up dotnet 8 as default SDK
         run: |
-          dotnet new globaljson --sdk-version 6.0.0 --roll-forward minor
+          dotnet new globaljson --sdk-version 8.0.0 --roll-forward minor
           dotnet --version
       - name: Set up JDK 17
         uses: actions/setup-java@v3
