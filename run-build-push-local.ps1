@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 dotnet build --configuration Release TextDiff/TextDiff.csproj 
 ./run-pack.ps1
 
